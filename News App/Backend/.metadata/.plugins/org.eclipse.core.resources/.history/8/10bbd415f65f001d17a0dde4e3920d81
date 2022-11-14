@@ -1,0 +1,26 @@
+package com.bean;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Alltopics {
+	@Id 
+	private int tid;
+	private String topic;
+	private String headline;
+	private String image;
+	private String description;
+	@Column(name="likes")
+	private int likes=0;
+	@Column(name="dislikes")
+	private int dislikes=0;
+	private String comments;
+	private Date date;
+	private String Journalist;
+	private String Country;
+
+}

@@ -1,0 +1,141 @@
+package com.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Repo.UsernewsRepo;
+import com.bean.Usernews;
+
+@Service
+public class UsernewsService {
+	
+	@Autowired
+	UsernewsRepo unr;
+	
+	public String addbusiness(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj: objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+				obj.setBusiness("added");
+				unr.saveAndFlush(obj);
+				return "Business updates enabled";
+			}
+			else {
+				return "Invalid user";
+			}
+		}
+		return "Business not enabled";
+	}
+	public String unaddbusiness(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj: objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+				obj.setBusiness("unadded");
+				unr.saveAndFlush(obj);
+				return "Business updates disabled";			
+				}
+			else {
+				return "Invalid user";
+			}
+			
+		}
+		return "Business not disabled";
+	}
+
+	public String addenter(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj : objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+			obj.setEntertainment("added");
+			unr.saveAndFlush(obj);
+			return "Entertainment updates enabled";
+		}else {
+			return "Invalid user";
+		}
+		}
+		return "Entertainment not enabled";
+	}
+	public String unaddenter(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj : objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+			obj.setEntertainment("unadded");
+			unr.saveAndFlush(obj);
+			return "Entertainment updates disabled";
+		}else {
+			return "Invalid user";
+		}
+		}
+		return "Entertainment not disabled";
+	}
+	public String addpol(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj : objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+			obj.setPolitical("added");
+			unr.saveAndFlush(obj);
+			return "Political updates enabled";
+		}else {
+			return "Invalid user";
+		}
+		}
+		return "Political not enabled";
+		
+	}
+	public String unaddpol(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj : objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+			obj.setPolitical("unadded");
+			unr.saveAndFlush(obj);
+			return "Political updates disabled";
+		}else {
+			return "Invalid user";
+		}
+		}
+		return "Political not disabled";
+	}
+	public String addscience(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj: objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+				obj.setScience("added");
+				unr.saveAndFlush(obj);
+				return "Science updates enabled";
+			}else {
+				return "Invalid user";
+			}
+		}
+		return "Science not enabled";
+	}
+	public String unaddscience(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj: objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+				obj.setScience("unadded");
+				unr.saveAndFlush(obj);
+				return "Science updates disabled";
+			}else {
+				return "Invalid user";
+			}
+		}
+		return "Science not disabled";
+		
+	}
+	public String addsports(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj: objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+				obj.setSports("added");
+				unr.saveAndFlush(obj);
+				return "Sports updates enabled";
+			}else {
+				return "Inavlid user";
+			}
+		}
+		return "Sports not enabled";
+		
+	}
+}

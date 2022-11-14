@@ -1,0 +1,32 @@
+package com.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Repo.UsernewsRepo;
+import com.bean.Usernews;
+
+@Service
+public class UsernewsService {
+	
+	@Autowired
+	UsernewsRepo unr;
+	
+	public String addbusiness(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj: objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+				obj.setBusiness("added");
+				unr.saveAndFlush(obj);
+				return "Business updated enabled";
+			}
+			else {
+				return "Invalid user";
+			}
+		}
+		return "Business not enabled";
+	}
+
+}

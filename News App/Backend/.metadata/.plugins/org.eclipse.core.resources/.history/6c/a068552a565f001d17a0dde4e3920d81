@@ -1,0 +1,67 @@
+package com.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.Service.UsernewsService;
+import com.bean.Usernews;
+
+@RestController
+@RequestMapping
+public class UsernewsController {
+	
+	@Autowired
+	UsernewsService uns;
+	
+	@PatchMapping(value="addbus", consumes=MediaType.APPLICATION_JSON_VALUE)
+	public String addbus(@RequestBody Usernews un) {
+		return uns.addbusiness(un);
+	}
+	@PatchMapping(value="unaddbus", consumes=MediaType.APPLICATION_JSON_VALUE)
+	public String unaddbus(@RequestBody Usernews un) {
+		return uns.unaddbusiness(un);
+	}
+
+	@PatchMapping(value="addent", consumes=MediaType.APPLICATION_JSON_VALUE)
+	public String addent(@RequestBody Usernews un) {
+		return uns.addenter(un);
+	}
+	@PatchMapping(value="unaddent", consumes=MediaType.APPLICATION_JSON_VALUE)
+	public String unaddent(@RequestBody Usernews un) {
+		return uns.unaddenter(un);
+	}
+	@PatchMapping(value="addpol", consumes=MediaType.APPLICATION_JSON_VALUE)
+	public String addpol(@RequestBody Usernews un) {
+		return uns.addpol(un);
+	}
+	@PatchMapping(value="unaddpol", consumes=MediaType.APPLICATION_JSON_VALUE)
+	public String unaddpol(@RequestBody Usernews un) {
+		return uns.unaddpol(un);
+	}
+	@PatchMapping(value="addsci", consumes=MediaType.APPLICATION_JSON_VALUE)
+	public String addsci(@RequestBody Usernews un) {
+		return uns.addscience(un);
+	}
+	@PatchMapping(value="unaddsci", consumes=MediaType.APPLICATION_JSON_VALUE)
+	public String unaddsci(@RequestBody Usernews un) {
+		return uns.unaddscience(un);
+	}
+	@PatchMapping(value="addsport", consumes=MediaType.APPLICATION_JSON_VALUE)
+	public String addsport(@RequestBody Usernews un) {
+		return uns.addsports(un);
+	}
+	@PatchMapping(value="unaddsport", consumes=MediaType.APPLICATION_JSON_VALUE)
+	public String unaddsport(@RequestBody Usernews un) {
+		return uns.unaddsports(un);
+	}
+	@PatchMapping(value="addtech", consumes=MediaType.APPLICATION_JSON_VALUE)
+	public String addtech(@RequestBody Usernews un) {
+		return uns.addtechno(un);
+	}
+	
+	
+}

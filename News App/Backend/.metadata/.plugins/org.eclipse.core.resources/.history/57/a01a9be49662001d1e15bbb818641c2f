@@ -1,0 +1,279 @@
+package com.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Repo.AlltopicsRepo;
+import com.Repo.UsernewsRepo;
+import com.bean.Alltopics;
+import com.bean.Usernews;
+
+@Service
+public class UsernewsService {
+	
+	@Autowired
+	UsernewsRepo unr;
+	
+	@Autowired
+	AlltopicsRepo atr;
+	
+	public String addbusiness(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj: objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+				obj.setBusiness("added");
+				unr.saveAndFlush(obj);
+				return "Business updates enabled";
+			}
+			else {
+				return "Invalid user";
+			}
+		}
+		return "Business not enabled";
+	}
+	public String unaddbusiness(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj: objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+				obj.setBusiness("unadded");
+				unr.saveAndFlush(obj);
+				return "Business updates disabled";			
+				}
+			else {
+				return "Invalid user";
+			}
+			
+		}
+		return "Business not disabled";
+	}
+
+	public String addenter(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj : objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+			obj.setEntertainment("added");
+			unr.saveAndFlush(obj);
+			return "Entertainment updates enabled";
+		}else {
+			return "Invalid user";
+		}
+		}
+		return "Entertainment not enabled";
+	}
+	public String unaddenter(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj : objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+			obj.setEntertainment("unadded");
+			unr.saveAndFlush(obj);
+			return "Entertainment updates disabled";
+		}else {
+			return "Invalid user";
+		}
+		}
+		return "Entertainment not disabled";
+	}
+	public String addpol(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj : objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+			obj.setPolitical("added");
+			unr.saveAndFlush(obj);
+			return "Political updates enabled";
+		}else {
+			return "Invalid user";
+		}
+		}
+		return "Political not enabled";
+		
+	}
+	public String unaddpol(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj : objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+			obj.setPolitical("unadded");
+			unr.saveAndFlush(obj);
+			return "Political updates disabled";
+		}else {
+			return "Invalid user";
+		}
+		}
+		return "Political not disabled";
+	}
+	public String addscience(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj: objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+				obj.setScience("added");
+				unr.saveAndFlush(obj);
+				return "Science updates enabled";
+			}else {
+				return "Invalid user";
+			}
+		}
+		return "Science not enabled";
+	}
+	public String unaddscience(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj: objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+				obj.setScience("unadded");
+				unr.saveAndFlush(obj);
+				return "Science updates disabled";
+			}else {
+				return "Invalid user";
+			}
+		}
+		return "Science not disabled";
+		
+	}
+	public String addsports(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj: objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+				obj.setSports("added");
+				unr.saveAndFlush(obj);
+				return "Sports updates enabled";
+			}else {
+				return "Inavlid user";
+			}
+		}
+		return "Sports not enabled";
+		
+	}
+	public String unaddsports(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj: objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+				obj.setSports("unadded");
+				unr.saveAndFlush(obj);
+				return "Sports updates disabled";
+			}else {
+				return "Inavlid user";
+			}
+		}
+		return "Sports not disabled";
+		
+	}
+	public String addtechno(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj : objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+				obj.setTech("added");
+				unr.saveAndFlush(obj);
+				return "Tech updates enabled";
+			}else {
+				return "Invalid user";
+			}
+		}
+		return "Tech not enabled";
+	}
+	
+	public String unaddtechno(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj : objects) {
+			if(un.getEmail().equals(obj.getEmail())) {
+				obj.setTech("unadded");
+				unr.saveAndFlush(obj);
+				return "Tech updates disabled";
+			}else {
+				return "Invalid user";
+			}
+		}
+		return "Tech not disabled";
+		
+	}
+	public String addtravel(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj: objects) {
+			if(un.getEmail().equals(un.getEmail())) {
+				obj.setTravel("added");
+				unr.saveAndFlush(obj);
+				return "Travel updates enabled";
+			}else {
+				return "Invalid user";
+			}
+		}
+		return "Travel not enabled";
+	}
+	
+	public String unaddtravel(Usernews un) {
+		List<Usernews> objects = unr.findAll();
+		for(Usernews obj: objects) {
+			if(un.getEmail().equals(un.getEmail())) {
+				obj.setTravel("unadded");
+				unr.saveAndFlush(obj);
+				return "Travel updates disabled";
+			}else {
+				return "Invalid user";
+			}
+		}
+		return "Travel not disabled";
+	}
+	public String like(Alltopics at) {
+		Optional <Alltopics> res = atr.findById(at.getTid());
+		if(res.isPresent()) {
+			Alltopics a = res.get();
+			a.setLikes(a.getLikes()+1);
+			atr.saveAndFlush(a);
+			return "liked";
+		}
+		return "Not liked";
+		
+	}
+	public String dislike(Alltopics at) {
+		Optional <Alltopics> res = atr.findById(at.getTid());
+		if(res.isPresent()) {
+			Alltopics a = res.get();
+			a.setDislikes(a.getDislikes()+1);
+			atr.saveAndFlush(a);
+			return "disliked";
+		}
+		return "Not disliked";
+	}
+	public String comment(Alltopics at, String email) {
+		System.out.println(at.getTid());
+		System.out.println(email);
+		Optional <Alltopics> res = atr.findById(at.getTid());
+		System.out.println(res);
+		if(res.isPresent()) {
+			Alltopics a = res.get();
+			a.setComments(a.getComments()+" "+email+": "+at.getComments());
+			atr.saveAndFlush(a);
+			return "Commented";
+		}
+		return "Did not comment";
+	}
+	
+	public List<Object[]> viewtech(){
+		return atr.gettechtop();
+	}
+	public List<Object[]> viewsport(){
+		return atr.getsport();
+	}
+	public List<Object[]> viewtravel(){
+		return atr.gettravel();
+	}
+	public List<Object[]> viewscience(){
+		return atr.getscience();
+	}
+	public List<Object[]> viewpolitical(){
+		return atr.getpolitical();
+	}
+	public List<Object[]> viewbusi(){
+		return atr.getbus();
+	}
+	public List<Object[]> viewenter(){
+		return atr.getenter();
+	}
+	public List<Object[]> viewsportentertravel(){
+		return atr.getsportentertravel();
+	}
+	public List<Object[]> viewbupol(){
+		return atr.getbupol();
+	}
+}
+

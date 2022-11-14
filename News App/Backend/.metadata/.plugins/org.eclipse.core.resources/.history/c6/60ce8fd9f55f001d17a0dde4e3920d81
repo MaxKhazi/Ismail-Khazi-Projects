@@ -1,0 +1,23 @@
+package com.bean;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Alltopics {
+	@Id
+	private int tid;
+	private String topic;
+	private String headline;
+	private String image;
+	private String description;
+	private int likes;
+	private int dislikes;
+	private String comments;
+	private Date date;
+	private String Journalist;
+	private String Country;
+
+}
